@@ -1,4 +1,4 @@
-# Install script for directory: /home/cyx/桌面/vision_noise
+# Install script for directory: /home/cyx/桌面/cv_homework/vision_noise
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/cyx/桌面/vision_noise/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/cyx/桌面/cv_homework/vision_noise/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

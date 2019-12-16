@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/cyx/桌面/vision_noise/main.cpp
+/home/cyx/桌面/cv_homework/vision_noise/main.cpp
 cv.h
-/home/cyx/桌面/vision_noise/cv.h
+/home/cyx/桌面/cv_homework/vision_noise/cv.h
 opencv2/opencv.hpp
 -
 

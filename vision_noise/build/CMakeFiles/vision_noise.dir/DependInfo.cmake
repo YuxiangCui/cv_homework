@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cyx/桌面/vision_noise/main.cpp" "/home/cyx/桌面/vision_noise/build/CMakeFiles/vision_noise.dir/main.cpp.o"
+  "/home/cyx/桌面/cv_homework/vision_noise/main.cpp" "/home/cyx/桌面/cv_homework/vision_noise/build/CMakeFiles/vision_noise.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
