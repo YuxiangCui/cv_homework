@@ -29,7 +29,8 @@ Mat add_Gaussian_Noise(Mat& srcImage);
 int main()
 {
     //读入图像
-    Mat srcImage = imread("/home/cyx/桌面/vision_noise/input/3.jpg");
+    Mat srcImage = imread("/home/cyx/桌面/cv_homework/vision_noise/input/1.jpg");
+    resize(srcImage,srcImage,Size(512,334),CV_INTER_AREA);
     if (!srcImage.data)
     {
         cout << "读入图像有误！" << endl;
@@ -39,14 +40,14 @@ int main()
     imshow("srcImage", srcImage);
 
     //增添椒盐噪声
-    Mat dstImage1 = add_Salt_Noise(srcImage, 1000);
+    Mat dstImage1 = add_Salt_Noise(srcImage, 2000);
     imshow("salt_pepper_Image", dstImage1);
-    imwrite("/home/cyx/桌面/vision_noise/output/salt_pepper_Image.jpg", dstImage1);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/salt_pepper_Image.jpg", dstImage1);
 
     //增添高斯噪声
     Mat dstImage2 = add_Gaussian_Noise(srcImage);
     imshow("gaussian_Image", dstImage2);
-    imwrite("/home/cyx/桌面/vision_noise/output/gaussian_Image.jpg", dstImage2);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/gaussian_Image.jpg", dstImage2);
 
 
 
@@ -55,64 +56,64 @@ int main()
     Mat blur_out_0;
     blur(dstImage1,blur_out_0,Size(3, 3));
     imshow("blur_out_0", blur_out_0);
-    imwrite("/home/cyx/桌面/vision_noise/output/blur_out_0.jpg", blur_out_0);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/blur_out_0.jpg", blur_out_0);
 
     Mat blur_out_1;
     blur(dstImage1,blur_out_1,Size(5, 5));
     imshow("blur_out_1", blur_out_1);
-    imwrite("/home/cyx/桌面/vision_noise/output/blur_out_1.jpg", blur_out_1);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/blur_out_1.jpg", blur_out_1);
 
     //均值滤波2
     Mat blur_out_2;
     blur(dstImage2,blur_out_2,Size(5, 5));
     imshow("blur_out_2", blur_out_2);
-    imwrite("/home/cyx/桌面/vision_noise/output/blur_out_2.jpg", blur_out_2);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/blur_out_2.jpg", blur_out_2);
 
     //高斯滤波1
     Mat gaussian_blur_out_1;
     GaussianBlur(dstImage1, gaussian_blur_out_1, Size(3, 3), 0, 0);
     imshow("gaussian_blur_out_1", gaussian_blur_out_1);
-    imwrite("/home/cyx/桌面/vision_noise/output/gaussian_blur_out_1.jpg", gaussian_blur_out_1);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/gaussian_blur_out_1.jpg", gaussian_blur_out_1);
 
     Mat gaussian_blur_out_0;
     GaussianBlur(dstImage2, gaussian_blur_out_0, Size(7, 7), 0, 0);
     imshow("gaussian_blur_out_0", gaussian_blur_out_0);
-    imwrite("/home/cyx/桌面/vision_noise/output/gaussian_blur_out_0.jpg", gaussian_blur_out_0);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/gaussian_blur_out_0.jpg", gaussian_blur_out_0);
 
     //高斯滤波2
     Mat gaussian_blur_out_2;
     GaussianBlur(dstImage2, gaussian_blur_out_2, Size(3, 3), 0, 0);
     imshow("gaussian_blur_out_2", gaussian_blur_out_2);
-    imwrite("/home/cyx/桌面/vision_noise/output/gaussian_blur_out_2.jpg", gaussian_blur_out_2);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/gaussian_blur_out_2.jpg", gaussian_blur_out_2);
 
     //中值滤波1
     Mat median_blur_out_1;
     medianBlur(dstImage1, median_blur_out_1, 3);
     imshow("median_blur_out_1", median_blur_out_1);
-    imwrite("/home/cyx/桌面/vision_noise/output/median_blur_out_1.jpg", median_blur_out_1);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/median_blur_out_1.jpg", median_blur_out_1);
 
     Mat median_blur_out_0;
     medianBlur(dstImage1, median_blur_out_0, 5);
     imshow("median_blur_out_1", median_blur_out_0);
-    imwrite("/home/cyx/桌面/vision_noise/output/median_blur_out_0.jpg", median_blur_out_0);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/median_blur_out_0.jpg", median_blur_out_0);
 
     //中值滤波2
     Mat median_blur_out_2;
     medianBlur(dstImage2, median_blur_out_2, 3);
     imshow("median_blur_out_2", median_blur_out_2);
-    imwrite("/home/cyx/桌面/vision_noise/output/median_blur_out_2.jpg", median_blur_out_2);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/median_blur_out_2.jpg", median_blur_out_2);
 
     //双边滤波
     Mat bilateral_blur_out_1;
     bilateralFilter(dstImage1, bilateral_blur_out_1, 5, 50, 10);
     imshow("bilateral_blur_out_1", bilateral_blur_out_1);
-    imwrite("/home/cyx/桌面/vision_noise/output/bilateral_blur_out_1.jpg", bilateral_blur_out_1);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/bilateral_blur_out_1.jpg", bilateral_blur_out_1);
 
     //双边滤波
     Mat bilateral_blur_out_2;
     bilateralFilter(dstImage2, bilateral_blur_out_2, 5, 50, 10);
     imshow("bilateral_blur_out_2", bilateral_blur_out_2);
-    imwrite("/home/cyx/桌面/vision_noise/output/bilateral_blur_out_2.jpg", bilateral_blur_out_2);
+    imwrite("/home/cyx/桌面/cv_homework/vision_noise/output/bilateral_blur_out_2.jpg", bilateral_blur_out_2);
 
     waitKey();
     return 0;
